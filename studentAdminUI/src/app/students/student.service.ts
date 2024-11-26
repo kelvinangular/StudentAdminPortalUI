@@ -6,6 +6,8 @@ import { Student } from '../models/api-models/student.model';
 @Injectable({
   providedIn: 'root'
 })
+
+// Service file, configure API  
 export class StudentService {
 
   private baseApiUrl = 'https://localhost:7079';
