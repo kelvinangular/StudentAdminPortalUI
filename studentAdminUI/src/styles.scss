@@ -1,1 +1,51 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$azure-palette,
+  ),
+  typography: (
+    brand-family: 'Comic Sans',
+    bold-weight: 900
+  ),
+  density: (
+    scale: 0
+  )
+));
+
+:root {
+    mat-toolbar {
+        --mat-toolbar-container-background-color: #{mat.get-theme-color($theme, primary, 40)};
+    }
+}
+
+html {
+    //@include mat.core-theme($theme);
+    @include mat.all-component-themes($theme);
+}
+
+html, body {
+    height: 100%;
+}
+
+// Homepage
+
+// Students route
+.page-header {
+  background: #f1f1f1;
+}
+
+.page-header h1 {
+  padding: 8px 16px;
+  font-size:18px;
+}
+
+.m1-1 {
+    margin-left: 1em;
+}
+
+
+
